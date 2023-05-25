@@ -1,0 +1,11 @@
+<h1>Lists</h1>
+
+<hr>
+
+<% @lists.each do |list| %>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h2><%= list.name %></h2>
+    </div>
+  </div>
+<% end %>
