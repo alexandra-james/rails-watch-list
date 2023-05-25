@@ -9,13 +9,13 @@
 require "json"
 require "open-uri"
 
-puts "cleaning the database"
+# puts "cleaning the database"
 
-Movie.destroy_all
+# Movie.destroy_all
 
 puts "creating movies"
 
-url = "https://tmdb.lewagon.com/movie/top_rated"
+url = "https://tmdb.lewagon.com/movie/popular"
 movies_result = URI.open(url).read
 movies_json = JSON.parse(movies_result)
 movies = movies_json["results"]

@@ -5,7 +5,9 @@
 <% @lists.each do |list| %>
   <div class="card-product">
     <div class="card-product-infos">
-      <h2><%= list.name %></h2>
+      <h2><%= link_to "#{list.name}", list_path(list) %></h2>
     </div>
   </div>
 <% end %>
+
+<%= link_to "Create new list", new_list_path , class: "btn btn-ghost" %>
