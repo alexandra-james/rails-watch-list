@@ -2,18 +2,19 @@
 
 <hr>
 
-<% @list.bookmarks.each do |bookmark| %>
-  <% url = bookmark.movie.poster_url %>
-  <div class="card-product">
-    <img src=<%="#{url}"%>>
-    <div class="card-product-infos">
-      <h2><%= bookmark.movie.title %></h2>
-      <p><%= bookmark.movie.overview %></p>
-      <p>Rating: <%= bookmark.movie.rating %></p>
-      <p><%= link_to "Delete", list_path(@list), data: {turbo_method: :delete}%></p>
+<div class="movies-container">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-movie">
+      <img src=<%="#{bookmark.movie.poster_url}"%>>
+      <div class="card-movie-infos">
+        <h2><%= bookmark.movie.title %></h2>
+        <p><%= bookmark.movie.overview %></p>
+        <p>Rating: <%= bookmark.movie.rating %></p>
+        <p><%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete}%></p>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <%= link_to "Add new bookmark", new_list_bookmark_path(@list) , class: "btn btn-ghost" %>
 <%= link_to "Back", lists_path , class: "btn btn-ghost" %>

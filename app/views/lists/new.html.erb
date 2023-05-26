@@ -1,8 +1,10 @@
-<h1>Create a new list</h1>
+<div class="container">
+  <h1>Create a new list</h1>
 
-<hr>
+  <hr>
 
-<%= simple_form_for (@list) do |l| %>
-  <%= l.input :name %>
-  <%= l.submit "Create list" %>
-<% end %>
+  <%= simple_form_for (@list) do |l| %>
+    <%= l.input :name %>
+    <%= l.submit "Create list" %>
+  <% end %>
+</div>
